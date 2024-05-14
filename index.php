@@ -87,7 +87,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['btn-delete'])) {
                     $nomor = 1;
                     foreach ($_SESSION["data_barang"] as $index => $barang){
                         $total = $barang['harga'] * $barang['jumlah'];
-                        $formattedTotal = "Rp " . number_format($total, 0, ',', '.');
+                        $formattedTotal = "Rp " . number_format($total, 2, ',', '.');
                         echo "<tr style='text-align: center;'>";
                         echo "<td>$nomor</td>";
                         echo "<td>".$barang['nama']."</td>";
@@ -124,7 +124,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['btn-delete'])) {
                         foreach ($_SESSION["data_barang"] as $barang) {
                             $totalHarga += $barang['total'];
                         }
-                        echo "Rp " . number_format($totalHarga, 0, ',', '.');
+                        echo "Rp " . number_format($totalHarga, 2, ',', '.');
                         ?>
                     </td>
                 </tr>

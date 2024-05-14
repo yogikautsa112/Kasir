@@ -41,9 +41,9 @@ $kembalian = $nominal - $totalHarga;
                             foreach ($_SESSION["data_barang"] as $barang){
                                 echo "<tr>";
                                 echo "<td>".$barang['nama']."</td>";
-                                echo "<td>Rp " . number_format($barang['harga'], 0, ',', '.') . "</td>";
+                                echo "<td>Rp " . number_format($barang['harga'], 2, ',', '.') . "</td>";
                                 echo "<td>".$barang['jumlah']."</td>";
-                                echo "<td>Rp " . number_format($barang['total'], 0, ',', '.') . "</td>";
+                                echo "<td>Rp " . number_format($barang['total'], 2, ',', '.') . "</td>";
                                 echo "</tr>";
                             }
                         }
@@ -51,10 +51,10 @@ $kembalian = $nominal - $totalHarga;
                     </tbody>
                 </table>
                 <div class="mb-4">
-                    <p><strong>Uang Yang Dibayarkan:</strong> Rp <?php echo number_format($nominal, 0, ',', '.'); ?></p>
-                    <p><strong>Total :</strong> Rp <?php echo number_format($totalHarga, 0, ',', '.'); ?></p>
+                    <p><strong>Uang Yang Dibayarkan:</strong> Rp <?php echo number_format($nominal, 2, ',', '.'); ?></p>
+                    <p><strong>Total :</strong> Rp <?php echo number_format($totalHarga, 2, ',', '.'); ?></p>
                     <?php if($kembalian > 0 ): ?>
-                        <p><strong>Kembalian: </strong> Rp <?php echo number_format($kembalian, 0, ',', '.'); ?></p>
+                        <p><strong>Kembalian: </strong> Rp <?php echo number_format($kembalian, 2, ',', '.'); ?></p>
                     <?php endif; ?>
                 </div>
                     <div>
